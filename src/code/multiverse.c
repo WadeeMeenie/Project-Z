@@ -35,7 +35,7 @@ MultiverseHero Multiverse_GetActiveHero(void) {
 }
 
 const char* Multiverse_GetHeroName(MultiverseHero hero) {
-    if ((hero < MULTIVERSE_HERO_TIME) || (hero >= MULTIVERSE_HERO_MAX)) {
+    if (hero < MULTIVERSE_HERO_TIME || hero >= MULTIVERSE_HERO_MAX) {
         return "Unknown Hero";
     }
 
