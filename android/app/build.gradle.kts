@@ -22,6 +22,11 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -36,6 +41,10 @@ android {
     }
 
     ndkVersion = "27.0.12077973"
+}
+
+kotlin {
+    jvmToolchain(17)
 }
 
 dependencies {
