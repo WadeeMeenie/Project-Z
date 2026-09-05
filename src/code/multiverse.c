@@ -3,12 +3,7 @@
 static MultiverseHero sActiveHero = MULTIVERSE_HERO_TIME;
 
 static const char* sHeroNames[MULTIVERSE_HERO_MAX] = {
-    "Hero of Time",
-    "Hero of Termina",
-    "Hero of Twilight",
-    "Hero of the Sky",
-    "Hero of the Wild",
-    "Hero of the Kingdom",
+    "Hero of Time", "Hero of Termina", "Hero of Twilight", "Hero of the Sky", "Hero of the Wild", "Hero of the Kingdom",
 };
 
 void Multiverse_Reset(void) {
