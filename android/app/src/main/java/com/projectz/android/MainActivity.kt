@@ -18,6 +18,7 @@ class MainActivity : ComponentActivity(), SurfaceHolder.Callback {
 
     private external fun nativeSetSurface(surface: Surface?)
     private external fun nativeOnInput(action: Int, x: Float, y: Float)
+    private external fun nativeShutdown()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,9 +35,16 @@ class MainActivity : ComponentActivity(), SurfaceHolder.Callback {
         nativeSetSurface(holder.surface)
     }
 
+    override fun surfaceChanged(holder: SurfaceHolder, format: Int, width: Int, height: Int) {
+        nativeSetSurface(holder.surface)
+    }
+
     override fun surfaceDestroyed(holder: SurfaceHolder) {
         nativeSetSurface(null)
     }
 
-    override fun surfaceChanged(holder: SurfaceHolder, format: Int, width: Int, height: Int) = Unit
+    override fun onDestroy() {
+        nativeShutdown()
+        super.onDestroy()
+    }
 }

@@ -9,11 +9,13 @@ set(PROJECT_Z_SOURCE_DIR "${CMAKE_CURRENT_LIST_DIR}/.." CACHE PATH "Project-Z so
 
 add_library(projectz_android SHARED
     app/src/main/cpp/projectz_android.cpp
+    app/src/main/cpp/projectz_android_platform.cpp
 )
 
 target_include_directories(projectz_android PRIVATE
     "${PROJECT_Z_SOURCE_DIR}/include"
     "${PROJECT_Z_SOURCE_DIR}/src"
+    "${CMAKE_CURRENT_LIST_DIR}/app/src/main/cpp"
 )
 
 target_compile_definitions(projectz_android PRIVATE
